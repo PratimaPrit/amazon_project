@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "Amazon Product Listing Optimizer with AI",
   "scripts": {
-    "install:all": "cd backend && npm install && cd ../frontend && npm install",
+  "install:all": "npm install concurrently --save-dev && cd backend && npm install && cd ../frontend && npm install",
     "migrate": "cd backend && npm run migrate",
     "migrate:status": "cd backend && npm run migrate:status",
     "migrate:down": "cd backend && node migrations/migrate.js down",

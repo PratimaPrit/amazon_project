@@ -10,6 +10,7 @@ exports.getHistoryByAsin = async (req, res, next) => {
       data: history
     });
   } catch (error) {
+    console.error('getHistoryByAsin error:', error);
     next(error);
   }
 };
@@ -25,6 +26,7 @@ exports.getAllHistory = async (req, res, next) => {
       data: history
     });
   } catch (error) {
+    console.error('getAllHistory error:', error);
     next(error);
   }
 };

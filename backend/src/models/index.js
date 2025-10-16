@@ -9,8 +9,11 @@ const sequelize = new Sequelize(dbConfig.database, dbConfig.username, dbConfig.p
   port: dbConfig.port,
   dialect: dbConfig.dialect,
   logging: dbConfig.logging,
-  pool: dbConfig.pool
+  pool: dbConfig.pool,
+  dialectOptions: process.env.DATABASE_SSL === 'true' ? { ssl: { rejectUnauthorized: false } } : {}
 });
+
+
 
 const db = {
   sequelize,
