@@ -17,14 +17,15 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 // Serve frontend static files in production
 
-app.use(express.static(path.join(__dirname, '../public')));
-app.get('*', (req, res) => {
-  res.sendFile(path.join(__dirname, '../public/index.html'));
-});
 
 app.use('/api', apiRoutes);
 app.get('/', (req, res) => {
   res.json({ message: 'Amazon Listing Optimizer API', version: '1.0.0' });
+});
+
+app.use(express.static(path.join(__dirname, '../public')));
+app.get('*', (req, res) => {
+  res.sendFile(path.join(__dirname, '../public/index.html'));
 });
 
 app.use((req, res) => {
