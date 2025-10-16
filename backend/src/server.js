@@ -19,9 +19,6 @@ app.use(express.urlencoded({ extended: true }));
 
 
 app.use('/api', apiRoutes);
-app.get('/', (req, res) => {
-  res.json({ message: 'Amazon Listing Optimizer API', version: '1.0.0' });
-});
 
 app.use(express.static(path.join(__dirname, '../public')));
 app.get('*', (req, res) => {
