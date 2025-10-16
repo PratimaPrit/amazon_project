@@ -13,8 +13,6 @@ const sequelize = new Sequelize(dbConfig.database, dbConfig.username, dbConfig.p
   dialectOptions: process.env.DATABASE_SSL === 'true' ? { ssl: { rejectUnauthorized: false } } : {}
 });
 
-
-
 const db = {
   sequelize,
   Sequelize
